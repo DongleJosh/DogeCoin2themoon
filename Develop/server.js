@@ -3,7 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const routes = require('./routes');
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASS, {
+const sequelize = new Sequelize(process.env.ecommerce_db, process.env.root, process.env.DrewsBrews, {
   dialect: 'mysql',
   host: 'localhost',
 });
@@ -23,7 +23,3 @@ app.use(routes);
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
 });
-
-
-
-module.exports = sequelize;
